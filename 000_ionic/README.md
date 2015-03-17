@@ -21,15 +21,16 @@ $ ionic start myApp tabs
 ```bash
 000_ionic
 ├── README.md
-├── bower.json
-├── config.xml
-├── gulpfile.js
-├── hooks
-├── ionic.project
-├── package.json
-├── plugins
-├── scss
-└── www
+├── bower.json     // bower dependencies
+├── config.xml     // cordova configuration
+├── gulpfile.js    // gulp tasks
+├── hooks          // custom cordova hooks to execute on specific commands
+├── ionic.project  // ionic configuration
+├── package.json   // node dependencies
+├── platforms      // iOS/Android specific builds will reside here
+├── plugins        // where your cordova/ionic plugins will be installed
+├── scss           // scss code, which will output to www/css/
+└── www            // application - JS code and libs, CSS, images, etc.
 ```
 
 ## serve project
@@ -115,6 +116,14 @@ $ ionic run ios --livereload
 
 ![2015-03-17 11 26 35](https://cloud.githubusercontent.com/assets/1150412/6689374/1389ff6c-ccfd-11e4-9155-6f61fdc39784.png)
 
+## run android app with livereload
+
+```bash
+$ cd {Project Root Directory}
+$ ionic platform add android
+$ ionic run android --livereload
+```
+
 ## output console.log in commandline
 
 ```bash
@@ -123,7 +132,7 @@ $ ionic run ios --livereload
 consolelogs
 ```
 
-### Trouble
+## Trouble
 
 ```bash
 $ ionic platform add ios
@@ -145,4 +154,22 @@ $ npm install -g ios-sim
 $ ionic run ios --livereload
 ```
 
+``` bash
+$ ionic run android --liverreload
 
+ERROR: Error: Please install Android target: "android-21".
+
+Hint: Open the SDK manager by running: /Applications/Android\ Studio.app/sdk/tools/android
+You will require:
+1. "SDK Platform" for android-21
+2. "Android SDK Platform-tools (latest)
+3. "Android SDK Build-tools" (latest)
+
+ERROR running one or more of the platforms: Error: /Users/a12692/Documents/workspace/angular-manabi/000_ionic/platforms/android/cordova/run: Command failed with exit code 2
+You may not have the required environment or OS to run this project
+
+$ cd /Applications/Android\ Studio.app/sdk/tools
+$ open .
+
+```
+android
