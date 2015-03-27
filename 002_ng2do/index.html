@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>002_ng2do</title>
+</head>
+<body>
+<todo-app>Loading...</todo-app>
+<!-- es6-shim -->
+<script src="/quickstart/dist/es6-shim.js"></script>
+<script>
+    System.paths = {
+        'angular2/*':'quickstart/angular2/*.js', // Angular
+        'rtts_assert/*': 'quickstart/rtts_assert/*.js', //Runtime assertions
+        'todo': 'js/todo.js'
+    };
+    System.import('todo')
+            .then(function(module) {
+                module.main();
+            });
+</script>
+</body>
+</html>

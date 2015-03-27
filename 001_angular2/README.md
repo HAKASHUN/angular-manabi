@@ -88,3 +88,7 @@ class MyAppComponent {
 bootstrap(MyAppComponent);
 ```
 
+
+## What is `es6-shim.js`?
+
+
